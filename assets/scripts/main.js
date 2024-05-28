@@ -52,16 +52,15 @@ function initializeServiceWorker() {
       // B3. TODO - Register './sw.js' as a service worker (The MDN article
       //            "Using Service Workers" will help you here)
       try {
-        navigator.serviceWorker.register('./sw.js');
+        navigator.serviceWorker.register("./sw.js");
         // B4. TODO - Once the service worker has been successfully registered, console
         //            log that it was successful.
-        console.log('Service worker registered');
+        console.log("Service worker registered");
+      } catch (err) {
+        // B5. TODO - In the event that the service worker registration fails, console
+        //            log that it has failed.
+        console.error("Service worker registration failed", err);
       }
-      catch (err) {
-        console.error('Service worker registration failed', err);
-      }
-      // B5. TODO - In the event that the service worker registration fails, console
-      //            log that it has failed.
     });
   }
   // STEPS B6 ONWARDS WILL BE IN /sw.js
